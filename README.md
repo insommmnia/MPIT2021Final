@@ -4,5 +4,5 @@
 Проект сделан на онлайн хакатоне МПИТ 2021
 Тема проекта: Здоровье и спорт 
 Сервис направленен на молодую целевую аудиторию(до 18 лет) и основной механикой является кооператив
-![Alt-текст](https://github.com/insommmnia/MPIT2021Final/blob/main/Component%202%20(1).png?raw=true)
+![Alt-текст](https://github.com/insommmnia/MPIT2021Final/blob/main/Mask%20Group.png?raw=true)
 #### Про проблему
