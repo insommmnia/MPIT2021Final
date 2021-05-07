@@ -2,7 +2,7 @@
 <?php
 
  
-$con = mysqli_connect("127.0.0.1","root","","mpit2021fin");
+$con = mysqli_connect("mysql.09-15-pn.myjino.ru","09-15-pn","IT.SCHOOL123","09-15-pn_nikita-alekseev");
 $text_query =  "SELECT * FROM users WHERE id = '{$_SESSION['id']}'";
 $query = mysqli_query($con, $text_query);
   	

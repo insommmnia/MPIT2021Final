@@ -10,9 +10,62 @@
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <!-- Main css -->
     <link rel="stylesheet" href="css1/style.css">
+     <style type="text/css">
+         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+      
+
+      p {
+
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1 {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      h2 {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      h3 {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      h4 {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      h5 {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      h6 {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      a {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      span {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      input {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+      label {
+
+         font-family: 'Open Sans', sans-serif;
+      }
+
+     </style>
 </head>
 <body style="background-color: #F2F7FF">
 

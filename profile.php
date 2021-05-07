@@ -8,7 +8,7 @@
   <title>Личный кабинет</title>
     <meta charset="UTF-8">
     
-    <link rel="shortcut icon" href="icons/logo.png" type="image/png">
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
     
     
     <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -298,7 +298,7 @@ height: auto;
     </style>
 </head>
 <?php 
-$con = mysqli_connect("127.0.0.1","root","","mpit2021fin");
+$con = mysqli_connect("mysql.09-15-pn.myjino.ru","09-15-pn","IT.SCHOOL123","09-15-pn_nikita-alekseev");
 
 
 
@@ -465,9 +465,17 @@ $result2 = $query2->fetch_assoc();
                                     <div class="card-body mx-auto px-6 py-4-5">
                                         <div class="row">
                                             
-                                            <div class="col-md-12">
-                                                <h6 class="text-muted font-semibold"><?php echo $result["name"]; echo " "; echo $result["surname"]; ?></h6>
-                                                <h6 class="font-extrabold mb-0"><?php echo $result["age"]; ?> лет</h6>
+                                             <div class="col-md-12">
+                                                <h6 class="font-extrabold font-semibold"><?php echo $result["name"]; echo " "; echo $result["surname"]; ?></h6>
+                                                <h6 class="text-muted mb-0"><?php echo $result["age"]; ?> лет</h6>
+                                                <h6 class="text-muted mt-2" style="font-size: 15px;">Код друга: <?php echo $result["friendcode"]; ?></h6>
+                                                <p style="font-size: 13px;">Отправьте его другу, чтобы тот смог добавить вас</p>
+                                                 
+                                                  
+                                                 
+                                                   
+                                                 
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -586,9 +594,45 @@ $result2 = $query2->fetch_assoc();
                         </div>
         
   </div>
-      
+      <div class="col-12 " style="height: 100px; ">
+        <div class="col-5 ml-2 ">
+                        <div class=" mt-1 "  >
+                            <div class="col-8   ">
+                                <div class="card " style="margin-left: 20px;">
+                                    <div class="card-body  ">
+                                        <div class="row">
+                                            
+                                            <div class="col-md-8">
+                                                
+                                                <h6 class="font-extrabold " >Добавить шаги за день</h6>
+                                                <div style="margin-top: 10px;">
+                                                <div class="form-group mt-2 " style="margin-top: 10px;">
+                                                 
+                                                 <input type="text" name="steps" class="steps form-control round mt-2" style="margin-top: 10px !important; ">
+                                                  </div>
+
+                                                              <div class="col-2 ">
+                                                              <button type="submit" style=" height: 40px; margin-top: 20px;"  class="button edit btn mx-auto ready btn-primary ml-1">
+                                                            
+                                                            
+                                                            <p style="margin-top: 0px;" >Добавить</p>
+                                                       </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        
+                    </div>
+      </div>
     </div>
 </div>
+                                                </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                                                     aria-labelledby="v-pills-profile-tab">
@@ -663,7 +707,7 @@ $result2 = $query2->fetch_assoc();
                                                         <td class="col-3">
                                                             <div class="d-flex align-items-center">
                                                                 <div class="avatar avatar-md">
-                                                                    <img src="assets/images/faces/5.jpg">
+                                                                    <img <?php echo "src='".$result61["img"]."'" ?>>
                                                                 </div>
                                                                 <p class="font-bold ms-3 mb-0"><?php 
                                                                     echo $result61["name"];
@@ -689,7 +733,7 @@ $result2 = $query2->fetch_assoc();
                                                         <td class="col-3">
                                                             <div class="d-flex align-items-center">
                                                                 <div class="avatar avatar-md">
-                                                                    <img src="assets/images/faces/5.jpg">
+                                                                    <img <?php echo "src='".$result62["img"]."'" ?>>
                                                                 </div>
                                                                 <p class="font-bold ms-3 mb-0"><?php 
                                                                     echo $result62["name"];
@@ -999,7 +1043,8 @@ $result2 = $query2->fetch_assoc();
                                                 
                                                 
         ?>
-        <input type="hidden" name="" class="totalsteps" <?php echo "value='".$teamtotal."'" ?>> 
+        <input type="hidden" name="" class="totalsteps" <?php echo "value='".$teamtotal."'" ?>>
+        
        <div class="col-12 " style="height: 500px;">
     <div class="col-lg-10 mx-auto">
 
@@ -1701,7 +1746,28 @@ $result2 = $query2->fetch_assoc();
 
 $(document).ready(function(){
        
+var stValue = $('input.ursteps').val();
+ var st2Value = $('input.totalsteps').val();
+            
+             console.log(stValue);
 
+                    $.ajax({
+
+                        method: "POST",
+                        url: "steptotal.php",
+                        data: { 
+
+                          totalst: stValue,
+                          totalst2: st2Value
+
+                        }
+                    })
+
+                    .done(function(){
+
+                      
+
+                    });
             
                 
 
@@ -1725,28 +1791,7 @@ $(document).ready(function(){
             })
                 .done(function(){
 
-                    var stValue = $('input.ursteps').val();
-                    var st2Value = $('input.totalsteps').val();
-            
-                    console.log(stValue);
-
-                    $.ajax({
-
-                        method: "POST",
-                        url: "steptotal.php",
-                        data: { 
-
-                          totalst: stValue,
-                          totalst2: st2Value
-
-                        }
-                    })
-
-                    .done(function(){
-
-                      location.reload();
-
-                    });
+                    location.reload();
                         
                 });
 
