@@ -338,27 +338,29 @@ height: auto;
             
             $result = $query->fetch_assoc();
 
-            
-            ?>
-
-               <li class='scroll-to-section mt-3'><a href='profile.php'>Личный кабинет</a></li>
+             echo "<li class='scroll-to-section mt-3'><a href='profile.php'>Личный кабинет</a></li>
               
                                 
-               <li class='scroll-to-section mt-1  '><img src="img/ocr.jpg" class="" style="height: 50px; width: 50px; margin-left: 10px; border-radius: 100%;"></li>
+               <li class='scroll-to-section mt-1'><img src='".$result["img"]."'  style='height: 50px; width: 50px; margin-left: 10px; border-radius: 100%;'></li>";
+           
+
                
                
-            <?php }
+               
+            }
               else {
-?>
-            <li class="mt-3">
+                 echo "<li class='mt-3'>
               <a href='log.php' >Регистрация</a>
             </li>
-            <li class="mt-3">
+            <li class='mt-3'>
               <a href='log2.php' >Вход</a>
-            </li>
+            </li>";
+               }
+            ?>
+            
             
 
-        <?php } ?>
+        
 
          
           
